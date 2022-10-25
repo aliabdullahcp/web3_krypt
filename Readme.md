@@ -5,3 +5,7 @@
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
+## Use Hardhat for Ethereum development environment
+```
+npx hardhat
+```
