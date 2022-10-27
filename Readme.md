@@ -8,4 +8,11 @@ npx tailwindcss init -p
 ## Use Hardhat for Ethereum development environment
 ```
 npx hardhat
+npx hardhat test
+```
+
+## Use alchemy to deploy  smart contracts
+
+```
+npx hardhat run scripts/deploy.js --network goerli
 ```
