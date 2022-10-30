@@ -16,3 +16,9 @@ npx hardhat test
 ```
 npx hardhat run scripts/deploy.js --network goerli
 ```
+
+## USe Alchemy.com to deploy smart contract
+
+
+## Deployed Contract: 
+### Transactions address:  0x7cA75cFb587cbF3378f051D29f9661b2D7d9BC3b
