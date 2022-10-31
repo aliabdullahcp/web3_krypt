@@ -17,6 +17,7 @@ const getEthereumContract = () => {
         signer,
         transactionContract
     })
+    return transactionContract
 }
 
 export const TrasactionProvider = ({ children }) => {
@@ -57,15 +58,18 @@ export const TrasactionProvider = ({ children }) => {
             const transactionContract = getEthereumContract();
             const parsedAmount = ethers.utils.parseEther(amount);
 
+            const txParams = {
+                from: currentAccount, 
+                to: addressTo,
+                gas: '0x5208', // 2100 gwei
+                value: parsedAmount._hex
+            };
+            
             await ethereum.request({
                 method: 'eth_sendTransaction',
-                params: [{
-                    form: currentAccount, to: addressTo,
-                    gas: '0x5208', // 2100 gwei
-                    value: parsedAmount._hexk
-                }]
+                params: [txParams]
             });
-
+            console.log(transactionContract)
             const transactionHash = await transactionContract.addToBlockchain(addressTo, parsedAmount, message, keyword);
 
             setIsLoading(true);
